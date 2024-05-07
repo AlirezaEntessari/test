@@ -9,7 +9,7 @@ export default function TestTable() {
 
   useEffect(() => {
     axios
-      .get("database-test1.c5qao8u6wxjb.us-east-2.rds.amazonaws.com/test")
+      .get(`${process.env.REACT_APP_API_URL}/test`)
       .then((response) => {
         const { columnNames, rows } = response.data;
         setTableHeaders(columnNames);
